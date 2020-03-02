@@ -9,9 +9,19 @@ Dodge and swerve through slow driving cars and avoid accidents at all costs.
 With this driving game, drivers will be able to test their skills on the road. 
 
 * Start and Restart game.
-* Change lanes, move up and backwards. (with arrow keys)
+* Change lanes, move up and backwards.
 * NPC cars on the road.
 * Scoreboard keeping score. 
+
+## Spec Details
+* Player can move car left, right, up and down with arrow keys. 
+* Points will increase as time passes. 
+* Player wins when they reach mac points (~999).
+
+## Timeline
+* Day#1 -> Create shell for the game. 
+* Day#2 -> 
+
 
 ## Languages and Technologies
 
