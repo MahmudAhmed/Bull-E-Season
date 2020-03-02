@@ -13,4 +13,4 @@ With this driving game, drivers will be able to test their skills on the road.
 * NPC cars on the road.
 * Scoreboard keeping score. 
 
-![Wireframe](sdas.com)
+![Wireframe](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/Bull-E%20Season.png)
