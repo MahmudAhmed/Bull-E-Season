@@ -1,0 +1,130 @@
+body{
+  background-size: 10%;
+  background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url(https://image.flaticon.com/sprites/new_packs/2010744-cooking.png);
+}
+
+#main{
+  /* width: 40vw; 
+  height: 50vw; */
+  /* height: 600px;
+  width: 400px; */
+  margin: 20px auto;
+  /* margin-top: 5vw;
+  margin-bottom: 5vw; */
+  background-color: aquamarine;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  
+}
+
+.view-container{
+  padding: 10px;
+  
+}
+
+#controls{
+  text-align: center;
+}
+
+#controls span {
+  font-weight: 700;
+}
+
+#score-container{
+  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 5px;
+}
+
+#score-container > span{
+  padding-left: 10px;
+}
+
+#score{
+  padding-right: 10px;
+}
+
+#game-container{
+  position: relative;
+  height: 700px;
+  width: 60%;
+  margin: auto;
+  margin-top: 15px;;
+  background-color: #292929;
+  background-image: url("../../dist/asphalt.jpg");
+  overflow: hidden;
+}
+
+.line{
+  position: absolute;
+  height: 80px;
+  width: 2%;
+  margin-left: 48%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#line1{
+  top: 0px;
+}
+#line2{
+  top: 150px;
+}
+#line3{
+  top: 300px;
+}
+#line4{
+  top: 450px;
+}
+#line5{
+  top: 600px;
+}
+#line6{
+  top: -150px;
+}
+#line7{
+  top: -280px;
+}
+
+#restart-container{
+  position: absolute;
+  display: inline-block;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.527);
+  /* border-radius: 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* left: 40%;
+  top: 45%; */
+  display: none;
+}
+
+#restart{
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  
+}
+
+.wrapper {
+    transition:height 1s ease-in;
+    height:0;
+    overflow:hidden;
+}
+
+
+@media all and (min-width: 1200px) {
+
+  #main{
+    /* height: 70vw; */
+    width: 600px;
+  }
+
+  #game_container{
+    height: 100%;
+  }
+
+}
