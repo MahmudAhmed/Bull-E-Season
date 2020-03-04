@@ -1,24 +1,42 @@
 body{
   background-size: 15%;
-  background-image: linear-gradient(rgba(42,43,45, 0.9), rgba(42,43,45, 0.6)),url("../dist/backdrop.jpg");
+  background-image: linear-gradient(rgb(0,0,0,0.7), rgb(0,0,0, 0.6)),url("../dist/backdrop.jpg");
 }
 
 .top-icons{
   display: flex;
   justify-content: center;
-  font-size: 50px;
-  color: rgb(47,168,217);
+  /* flex-direction: column; */
+  /* position: absolute; */
+  /* top: 300px;
+  right: 4.5%; */
+  font-size: 30px;
+  color: white;
 }
 
 .top-icons a {
-  margin: 10px
+  margin: 10px 10px 0;
+}
+
+.top-icons a:hover {
+  color: rgb(47,168,217);
+  font-size: 35px;
+  /* transition: ease-out 50ms; */
 }
 
 #header {
   text-align: center;
   font-family: Mansalva;
   font-size: 50px;
-  color: rgb(216,81,78);
+  font-weight: 700;
+  /* color: rgb(216,81,78); */
+  /* color: white; */
+  color: rgb(47,168,217);
+  text-shadow: -1px -1px 0 #000, -1px -1px 0 #000;
+
+  padding-top: 10px;
+  justify-self: center;
+
 }
 
 #main{
@@ -27,6 +45,9 @@ body{
   font-family: Comfortaa;
   box-sizing: border-box;
   border-radius: 10px;
+  position: relative;
+  box-shadow: -1px -1px 0 0px rgba(0,0,0,.15);
+
 }
 
 .view-container{
@@ -36,8 +57,9 @@ body{
 
 #controls{
   text-align: center;
-  color: rgb(47,168,217);
+  /* color: rgb(47,168,217); */
   margin-top: 10px;
+  color: white;
 }
 
 #controls span {
@@ -63,7 +85,7 @@ body{
 #game-container{
   position: relative;
   height: 700px;
-  width: 60%;
+  width: 70%;
   margin: auto;
   margin-top: 15px;;
   background-color: #292929;
@@ -159,15 +181,22 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   font-size: 16px;
   height: 10%;
   width: 100%;
   margin: 25px 0;
   color: white;
+  /* color: rgb(47,168,217); */
+    text-shadow: -1px -1px 0 #000, -1px -1px 0 #000, -1px -1px 0 #000, -1px -1px 0 #000; 
+
 }
 #music{
-  color: rgb(216,81,78);
+  /* color: rgb(216,81,78); */
+  color: rgb(47,168,217);
   position: absolute;
+  bottom: 2%;
+  left: 5%;
   font-size: 40px;
 }
 
