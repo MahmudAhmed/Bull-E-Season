@@ -1,4 +1,4 @@
-# Bull-E-Season ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ
+# Bull-E-Season (•_•) ( •_•)>⌐■-■ (⌐■_■)
 ***
 
 ## Description
