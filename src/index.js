@@ -2,10 +2,36 @@ window.addEventListener("DOMContentLoaded", () => {
   const car = document.getElementById("player-car")
   const gameContainer = document.getElementById("game-container")
   let gameLoop = requestAnimationFrame(loop);
+  
+  const crash = new Audio('./dist/crash.mp3');
+  const backgroundMusic = document.getElementById("background-music");
+  const toggleSound = document.getElementById("music")
+  
 
-  // const audio = new Audio('./dist/background_music.mp3');
-  // audio.loop = true;
-  // audio.play();
+  toggleSound.onclick = function() {
+    document.querySelector(".fa-volume-mute").classList.toggle("fa-volume-off")
+    togglePlay();
+  }
+
+  
+  let isPlaying = false;
+
+  function togglePlay() {
+    if (isPlaying) {
+      backgroundMusic.pause()
+    } else {
+      backgroundMusic.play();
+    }
+  };
+
+  backgroundMusic.onplaying = function () {
+    isPlaying = true;
+  };
+  backgroundMusic.onpause = function () {
+    isPlaying = false;
+  };
+  
+
 
   const gameContainerWidth = parseInt(window.getComputedStyle(gameContainer).width);
   const gameContainerHeight = parseInt(window.getComputedStyle(gameContainer).height);
@@ -26,12 +52,15 @@ window.addEventListener("DOMContentLoaded", () => {
   let topScore = localStorage.getItem('highScore');
   highScore.innerText = topScore;
   let scoreCounter = 0;
-  let speed = 2;
-  let lineSpeed = 5;
+  let speed = 3;
+  let lineSpeed = 4;
+  let handling = 5;
 
   const car1 = document.getElementById("car1")
   const car2 = document.getElementById("car2")
   const car3 = document.getElementById("car3")
+  const car4 = document.getElementById("car4")
+  // const car5 = document.getElementById("car5")
 
 
   const line1 = document.getElementById("line1")
@@ -110,15 +139,15 @@ window.addEventListener("DOMContentLoaded", () => {
   function left() {
     const position = parseInt(window.getComputedStyle(car).left)
     if (!gameOver && position > 5){
-      car.style.left = `${position - 5}px`
+      car.style.left = `${position - handling}px`
       moveLeft = requestAnimationFrame(left);
     }
   }
 
   function right() {
     const position = parseInt(window.getComputedStyle(car).left)
-    if (!gameOver && position < (gameContainerWidth - carWidth - 5)) {
-      car.style.left = `${position + 5}px`
+    if (!gameOver && position < (gameContainerWidth - carWidth - 7)) {
+      car.style.left = `${position + handling}px`
       moveRight = requestAnimationFrame(right);
     }
   }
@@ -141,7 +170,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   function loop() {
-    if (collision(car, car1) || collision(car, car2) || collision(car, car3)) {
+    if (collision(car, car1) || collision(car, car2) || collision(car, car3) || collision(car, car4)) {
+      crash.play();
       gameOver = true
       lost();
       return;
@@ -157,9 +187,16 @@ window.addEventListener("DOMContentLoaded", () => {
       lineSpeed++;
     }
 
+    if (scoreCounter % 1000 == 0 && handling < 15) {
+      handling++;
+    }
+
+
     carDown(car1);
     carDown(car2);
     carDown(car3);
+    carDown(car4);
+    // carDown(car5);
 
     lineDown(line1);
     lineDown(line2);
@@ -177,7 +214,8 @@ window.addEventListener("DOMContentLoaded", () => {
     if (position > gameContainerHeight) {
       position = -200;
       const positionLeft = parseInt(Math.random() * (gameContainerWidth - carWidth - 10));
-      car.style.left = `${positionLeft}px`
+      car.style.left = `${positionLeft}px`;
+      car.style.backgroundColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 
     }
     car.style.top = `${position + speed}px`
@@ -209,6 +247,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const npcXReach = npcTopLeft + w2 + 5;
 
     if (playersYReach < y2 || y1 > npcYReach || playersXReach < npcTopLeft || playersTopLeft > npcXReach) return false;
+    setInterval(function () {
+      playerCar.style.display = (playerCar.style.display == 'none' ? '' : 'none');
+      npcCar.style.display = (npcCar.style.display == 'none' ? '' : 'none');
+    }, 500);
     return true;
   }
 
@@ -218,7 +260,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   function lost() {
-    cancelAnimationFrame(gameLoop);
     cancelAnimationFrame(moveRight);
     cancelAnimationFrame(moveLeft);
     cancelAnimationFrame(moveUp);
@@ -229,7 +270,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function setHighScore() {
-    debugger
+  
     if (parseInt(topScore) < parseInt(score.innerText)){
       topScore = parseInt(score.innerText);
       localStorage.setItem("highScore", parseInt(score.innerText));

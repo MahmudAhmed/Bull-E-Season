@@ -1,20 +1,32 @@
 body{
-  background-size: 10%;
-  background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url(https://image.flaticon.com/sprites/new_packs/2010744-cooking.png);
+  background-size: 15%;
+  background-image: linear-gradient(rgba(42,43,45, 0.9), rgba(42,43,45, 0.6)),url("../dist/backdrop.jpg");
+}
+
+.top-icons{
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: rgb(47,168,217);
+}
+
+.top-icons a {
+  margin: 10px
+}
+
+#header {
+  text-align: center;
+  font-family: Mansalva;
+  font-size: 50px;
+  color: rgb(216,81,78);
 }
 
 #main{
-  /* width: 40vw; 
-  height: 50vw; */
-  /* height: 600px;
-  width: 400px; */
   margin: 20px auto;
-  /* margin-top: 5vw;
-  margin-bottom: 5vw; */
-  background-color: aquamarine;
-  font-family: sans-serif;
+  background-color: rgb(42,43,45);
+  font-family: Comfortaa;
   box-sizing: border-box;
-  
+  border-radius: 10px;
 }
 
 .view-container{
@@ -24,6 +36,8 @@ body{
 
 #controls{
   text-align: center;
+  color: rgb(47,168,217);
+  margin-top: 10px;
 }
 
 #controls span {
@@ -53,7 +67,7 @@ body{
   margin: auto;
   margin-top: 15px;;
   background-color: #292929;
-  background-image: url("../../dist/asphalt.jpg");
+  background-image: url("../../dist/asphalt2.jpg");
   overflow: hidden;
 }
 
@@ -64,6 +78,17 @@ body{
   margin-left: 48%;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
+#curb1{
+  margin-left: 1%;
+  height: 100%;
+}
+
+#curb2{
+  margin-left: 97%;
+  height: 100%;
+}
+
 #line1{
   top: 0px;
 }
@@ -97,6 +122,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   /* left: 40%;
   top: 45%; */
   display: none;
@@ -109,12 +135,42 @@ body{
   
 }
 
-.wrapper {
-    transition:height 1s ease-in;
-    height:0;
-    overflow:hidden;
+.small-text{
+  font-size: 14px;
 }
 
+#crashed-icon{
+  font-size: 50px;
+}
+
+.personal-icons{
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.personal-icons i{
+  cursor: pointer;
+}
+
+.personal-icons i:hover{
+  font-size: 35px;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  height: 10%;
+  width: 100%;
+  margin: 25px 0;
+  color: white;
+}
+#music{
+  color: rgb(216,81,78);
+  position: absolute;
+  font-size: 40px;
+}
 
 @media all and (min-width: 1200px) {
 
