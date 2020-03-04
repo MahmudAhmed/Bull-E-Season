@@ -68,6 +68,7 @@ body{
   margin-top: 15px;;
   background-color: #292929;
   background-image: url("../../dist/asphalt2.jpg");
+  z-index: -1;
   overflow: hidden;
 }
 
