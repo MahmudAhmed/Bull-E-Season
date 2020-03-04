@@ -7,7 +7,7 @@ Dodge and swerve through slow driving cars and avoid accidents at all costs.
 
 
 ## Live
-Play the game live [heare!](http://127.0.0.1:5500/index.html)
+Play the game live [here!](https://mahmudahmed.github.io/Bull-E-Season/)
 ## Functionality & MVP
 With this driving game, drivers will be able to test their skills on the road. 
 
