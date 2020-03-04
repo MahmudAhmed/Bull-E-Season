@@ -1,49 +1,52 @@
+import { controls } from "./controls";
+
 window.addEventListener("DOMContentLoaded", () => {
-  const car = document.getElementById("player-car")
+  // const car = document.getElementById("player-car")
   const gameContainer = document.getElementById("game-container")
   let gameLoop = requestAnimationFrame(loop);
   
-  const crash = new Audio('./dist/crash.mp3');
-  const backgroundMusic = document.getElementById("background-music");
-  const toggleSound = document.getElementById("music")
+  // const crash = new Audio('./dist/crash.mp3');
+  // const backgroundMusic = document.getElementById("background-music");
+  // const toggleSound = document.getElementById("music")
   
 
-  toggleSound.onclick = function() {
-    document.querySelector(".fa-volume-mute").classList.toggle("fa-volume-off")
-    togglePlay();
-  }
+  // toggleSound.onclick = function() {
+  //   document.querySelector(".fa-volume-mute").classList.toggle("fa-volume-off")
+  //   togglePlay();
+  // }
 
   
-  let isPlaying = false;
+  // let isPlaying = false;
 
-  function togglePlay() {
-    if (isPlaying) {
-      backgroundMusic.pause()
-    } else {
-      backgroundMusic.play();
-    }
-  };
+  // function togglePlay() {
+  //   if (isPlaying) {
+  //     backgroundMusic.pause()
+  //   } else {
+  //     backgroundMusic.play();
+  //   }
+  // };
 
-  backgroundMusic.onplaying = function () {
-    isPlaying = true;
-  };
-  backgroundMusic.onpause = function () {
-    isPlaying = false;
-  };
+  // backgroundMusic.onplaying = function () {
+  //   isPlaying = true;
+  // };
+  // backgroundMusic.onpause = function () {
+  //   isPlaying = false;
+  // };
   
-
+  controls.keyUp;
+  controls.keyDown;
 
   const gameContainerWidth = parseInt(window.getComputedStyle(gameContainer).width);
   const gameContainerHeight = parseInt(window.getComputedStyle(gameContainer).height);
   const carWidth = parseInt(window.getComputedStyle(car).width);
   const carHeight = parseInt(window.getComputedStyle(car).height);
 
-  let moveRight = false;
-  let moveLeft = false;
-  let moveUp = false;
-  let moveDown = false;
+  // let moveRight = false;
+  // let moveLeft = false;
+  // let moveUp = false;
+  // let moveDown = false;
 
-  let gameOver = false;
+  // let gameOver = false;
   const restartContainer = document.getElementById("restart-container");
   const restartBtn = document.getElementById("restart");
   const score = document.getElementById("score");
@@ -60,7 +63,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const car2 = document.getElementById("car2")
   const car3 = document.getElementById("car3")
   const car4 = document.getElementById("car4")
-  // const car5 = document.getElementById("car5")
 
 
   const line1 = document.getElementById("line1")
@@ -71,102 +73,102 @@ window.addEventListener("DOMContentLoaded", () => {
   const line6 = document.getElementById("line6")
   const line7 = document.getElementById("line7")
 
-  window.addEventListener("keydown", function (event) {
-    event.preventDefault();
-    if (!gameOver){
-      switch (event.keyCode) {
-        case 40:
-          if (!moveDown){
-            requestAnimationFrame(down)  
-          }            
-          break;
-        case 38:
-          if (!moveUp){
-            requestAnimationFrame(up)   
-          }     
-          break;
-        case 37:
-          if (!moveLeft){
-            requestAnimationFrame(left)   
-          }   
-          break;
+  // window.addEventListener("keydown", function (event) {
+  //   event.preventDefault();
+  //   if (!gameOver){
+  //     switch (event.keyCode) {
+  //       case 40:
+  //         if (!moveDown){
+  //           requestAnimationFrame(down)  
+  //         }            
+  //         break;
+  //       case 38:
+  //         if (!moveUp){
+  //           requestAnimationFrame(up)   
+  //         }     
+  //         break;
+  //       case 37:
+  //         if (!moveLeft){
+  //           requestAnimationFrame(left)   
+  //         }   
+  //         break;
 
-        case 39:
-          if (!moveRight){
-            requestAnimationFrame(right)   
-          }  
-          break;
+  //       case 39:
+  //         if (!moveRight){
+  //           requestAnimationFrame(right)   
+  //         }  
+  //         break;
   
-        default:
-          return; 
-      } 
-    }
-    if (gameOver && event.keyCode === 13) {
-      location.reload();
-    }
-  }, true);
+  //       default:
+  //         return; 
+  //     } 
+  //   }
+  //   if (gameOver && event.keyCode === 13) {
+  //     location.reload();
+  //   }
+  // }, true);
   
-  window.addEventListener("keyup", function (event) {
-    event.preventDefault();
-    if (!gameOver){
-      switch (event.keyCode) {
-        case 40:
-          cancelAnimationFrame(moveDown);
-          moveDown = false;
-          break;
+  // window.addEventListener("keyup", function (event) {
+  //   event.preventDefault();
+  //   if (!gameOver){
+  //     switch (event.keyCode) {
+  //       case 40:
+  //         cancelAnimationFrame(moveDown);
+  //         moveDown = false;
+  //         break;
 
-        case 38:
-          cancelAnimationFrame(moveUp);
-          moveUp = false;
-          break;
+  //       case 38:
+  //         cancelAnimationFrame(moveUp);
+  //         moveUp = false;
+  //         break;
 
-        case 37:
-          cancelAnimationFrame(moveLeft);
-          moveLeft = false;
-          break;
+  //       case 37:
+  //         cancelAnimationFrame(moveLeft);
+  //         moveLeft = false;
+  //         break;
 
-        case 39:
-          cancelAnimationFrame(moveRight);
-          moveRight = false;
-          break;
+  //       case 39:
+  //         cancelAnimationFrame(moveRight);
+  //         moveRight = false;
+  //         break;
 
-        default:
-          return; 
-      }
-    }
-  }, true);
+  //       default:
+  //         return; 
+  //     }
+  //   }
+  // }, true);
 
-  function left() {
-    const position = parseInt(window.getComputedStyle(car).left)
-    if (!gameOver && position > 5){
-      car.style.left = `${position - handling}px`
-      moveLeft = requestAnimationFrame(left);
-    }
-  }
+  // function left() {
+  //   const position = parseInt(window.getComputedStyle(car).left)
+  //   if (!gameOver && position > 5){
+  //     car.style.left = `${position - handling}px`
+  //     moveLeft = requestAnimationFrame(left);
+  //   }
+  // }
 
-  function right() {
-    const position = parseInt(window.getComputedStyle(car).left)
-    if (!gameOver && position < (gameContainerWidth - carWidth - 7)) {
-      car.style.left = `${position + handling}px`
-      moveRight = requestAnimationFrame(right);
-    }
-  }
+  // function right() {
+  //   const position = parseInt(window.getComputedStyle(car).left)
+  //   if (!gameOver && position < (gameContainerWidth - carWidth - 7)) {
+  //     car.style.left = `${position + handling}px`
+  //     moveRight = requestAnimationFrame(right);
+  //   }
+  // }
 
-  function up() {
-    const position = parseInt(window.getComputedStyle(car).top)
-    if (!gameOver && position > 20) {
-      car.style.top = `${position - 3}px`
-      moveUp = requestAnimationFrame(up);
-    }
-  }
+  // function up() {
+  //   const position = parseInt(window.getComputedStyle(car).top)
+  //   if (!gameOver && position > 20) {
+  //     car.style.top = `${position - 3}px`
+  //     moveUp = requestAnimationFrame(up);
+  //   }
+  // }
 
-  function down() {
-    const position = parseInt(window.getComputedStyle(car).top)
-    if (!gameOver && position < (gameContainerHeight - carHeight - 2)) {
-      car.style.top = `${position + 3}px`
-      moveDown = requestAnimationFrame(down);
-    }
-  }
+  // function down() {
+  //   const position = parseInt(window.getComputedStyle(car).top)
+  //   if (!gameOver && position < (gameContainerHeight - carHeight - 2)) {
+  //     car.style.top = `${position + 3}px`
+  //     moveDown = requestAnimationFrame(down);
+  //   }
+  // }
 
 
   function loop() {
@@ -196,7 +198,6 @@ window.addEventListener("DOMContentLoaded", () => {
     carDown(car2);
     carDown(car3);
     carDown(car4);
-    // carDown(car5);
 
     lineDown(line1);
     lineDown(line2);
