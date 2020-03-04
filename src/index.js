@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const score = document.getElementById("score");
   const highScore = document.getElementById("high-score");
   
-  let topScore = localStorage.getItem('highScore');
+  let topScore = localStorage.getItem('highScore') || 0;
   highScore.innerText = topScore;
   let scoreCounter = 0;
   let speed = 3;
