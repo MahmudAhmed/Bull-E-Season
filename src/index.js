@@ -52,8 +52,8 @@ window.addEventListener("DOMContentLoaded", () => {
   let topScore = localStorage.getItem('highScore') || 0;
   highScore.innerText = topScore;
   let scoreCounter = 0;
-  let speed = 3;
-  let lineSpeed = 4;
+  let speed = 4;
+  let lineSpeed = 5;
   let handling = 5;
 
   const car1 = document.getElementById("car1")
