@@ -172,7 +172,7 @@ footer{
   font-size: 40px;
 }
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 800px) {
 
   #main{
     /* height: 70vw; */
