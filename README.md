@@ -32,6 +32,19 @@ With this driving game, drivers will be able to test their skills on the road.
 * Vanilla JavaScript
 * HTML5/ CSS3
 
+## Code Snippets
+![collision_function](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/dist/collision.png)
+
+Use conditional logic to return false for conditions where I know the two object cannot be colliding. Then if those conditions aren't true I had the function return true. I use this function in other functions to check for the collision of different game objects so I know what actions should be done.
+
+![storeing_data_locally](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/dist/settingLocalHighScore.png)
+Checking to see current score is greater that the local high score, if it is set the local storage fore "highScore" to be later retrived. 
+
+## Functional Version
+![Design](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/dist/final.png)
+
+
+## Prototype/Wireframe
 ![Wireframe](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/Bull-E%20Season.png)
 
 ## Future considerations
