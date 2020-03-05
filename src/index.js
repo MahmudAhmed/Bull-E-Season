@@ -4,18 +4,21 @@ import { togglePlay } from "./music";
 window.addEventListener("DOMContentLoaded", () => {
   const toggleSound = document.getElementById("music");
   const restartBtn = document.getElementById("restart");
+  const playBtn = document.getElementById("play");
+
   // runGame();
   let game = new Game();
   toggleSound.onclick = function() {
     document.querySelector(".fa-volume-mute").classList.toggle("fa-volume-off");
     togglePlay();
   };
-  restartBtn.onclick = function() {
+  restartBtn.onclick = function(){
     game.reset();
-
     requestAnimationFrame(game.loop);
-
   };
+  playBtn.onclick = function(){
+    game.togglePause();
+  }
 
   requestAnimationFrame(game.loop);
   // function runGame(){

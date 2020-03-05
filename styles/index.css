@@ -1,5 +1,6 @@
 body{
   background-size: 15%;
+  background-image: linear-gradient(rgb(47,168,217,0.7), rgb(47,168,217, 0.6)),url("../dist/backdrop.jpg");
   background-image: linear-gradient(rgb(0,0,0,0.7), rgb(0,0,0, 0.6)),url("../dist/backdrop.jpg");
 }
 
@@ -33,9 +34,7 @@ body{
   /* color: white; */
   color: rgb(47,168,217);
   text-shadow: -1px -1px 0 #000, -1px -1px 0 #000;
-
   padding-top: 10px;
-  justify-self: center;
 
 }
 
@@ -57,9 +56,10 @@ body{
 
 #controls{
   text-align: center;
-  /* color: rgb(47,168,217); */
   margin-top: 10px;
   color: white;
+  color: rgb(47,168,217);
+  line-height: 20px;
 }
 
 #controls span {
@@ -70,8 +70,14 @@ body{
   /* display: inline-block; */
   display: flex;
   justify-content: center;
-  margin: auto;
+  align-items: center;
+  margin: 10px auto 0;
   padding-top: 5px;
+  color: white;
+  width: 300px;
+  height: 30px;
+  border-radius: 3px;
+  background-color: rgb(47,168,217);
 }
 
 #score-container > span{
@@ -213,12 +219,10 @@ footer{
   width: 100%;
   margin: 25px 0;
   color: white;
-  /* color: rgb(47,168,217); */
-    text-shadow: -1px -1px 0 #000, -1px -1px 0 #000, -1px -1px 0 #000, -1px -1px 0 #000; 
+  text-shadow: -1px -1px 0 #000, -1px -1px 0 #000, -1px -1px 0 #000, -1px -1px 0 #000; 
 
 }
 #music{
-  /* color: rgb(216,81,78); */
   color: rgb(47,168,217);
   position: absolute;
   bottom: 2%;

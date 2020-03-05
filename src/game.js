@@ -12,8 +12,8 @@ class Game {
     this.carHeight = parseInt(window.getComputedStyle(this.car).height);
     this.restartContainer = document.getElementById("restart-container");
     this.pauseContainer = document.getElementById("pause-container");
-    this.restartBtn = document.getElementById("restart");
-    this.playBtn = document.getElementById("play");
+    // this.restartBtn = document.getElementById("restart");
+    // this.playBtn = document.getElementById("play");
     this.score = document.getElementById("score");
     this.highScore = document.getElementById("high-score");
     this.topScore = localStorage.getItem("highScore") || 0;
