@@ -157,11 +157,36 @@ body{
   
 }
 
+#pause-container{
+  position: absolute;
+  display: inline-block;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.527);
+  /* border-radius: 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* left: 40%;
+  top: 45%; */
+  display: none;
+}
+
+#play{
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+
 .small-text{
   font-size: 14px;
 }
 
-#crashed-icon{
+#crashed-icon, #resume-icon{
   font-size: 50px;
 }
 

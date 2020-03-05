@@ -11,7 +11,9 @@ class Game {
     this.carWidth = parseInt(window.getComputedStyle(this.car).width);
     this.carHeight = parseInt(window.getComputedStyle(this.car).height);
     this.restartContainer = document.getElementById("restart-container");
+    this.pauseContainer = document.getElementById("pause-container");
     this.restartBtn = document.getElementById("restart");
+    this.playBtn = document.getElementById("play");
     this.score = document.getElementById("score");
     this.highScore = document.getElementById("high-score");
     this.topScore = localStorage.getItem("highScore") || 0;
@@ -20,7 +22,7 @@ class Game {
     this.pointSpeed = 1;
     this.speed = 4;
     this.lineSpeed = 5;
-
+    this.pause = false;
     this.moveRight = false;
     this.moveLeft = false;
     this.moveUp = false;
@@ -79,11 +81,20 @@ class Game {
 
   }
 
-  pause(){
+  togglePause(){
     cancelAnimationFrame(this.moveRight);
     cancelAnimationFrame(this.moveLeft);
     cancelAnimationFrame(this.moveUp);
     cancelAnimationFrame(this.moveDown);
+    if (this.pause){
+      this.pause = false;
+      this.pauseContainer.style.display = "none";
+      requestAnimationFrame(this.loop)
+    } else {
+      this.pause = true; 
+      this.pauseContainer.style.display = "flex";
+    }  
+
   }
 
   loop() {
@@ -127,7 +138,7 @@ class Game {
     this.lineDown(this.line6);
     this.lineDown(this.line7);
 
-    requestAnimationFrame(this.loop);
+    if (!this.pause) requestAnimationFrame(this.loop);
   }
 
   carDown(car) {
@@ -193,6 +204,7 @@ class Game {
     cancelAnimationFrame(this.moveLeft);
     cancelAnimationFrame(this.moveUp);
     cancelAnimationFrame(this.moveDown);
+    cancelAnimationFrame(this.loop);
     this.restartContainer.style.display = "flex";
     this.setHighScore();
   }
@@ -215,7 +227,7 @@ class Game {
   keyDownHandler(event) {
     event.preventDefault();
     debugger
-    if (!this.gameOver) {
+    if (!this.gameOver && !this.pause) {
       switch (event.keyCode) {
         case 40:
           if (!this.moveDown) {
@@ -238,11 +250,12 @@ class Game {
             this.moveRight = requestAnimationFrame(this.right);
           }
           break;
-
-        default:
-          return;
       }
     }
+    if (!this.gameOver && event.keyCode === 32) {
+      this.togglePause();
+    }
+    debugger
     if (this.gameOver && event.keyCode === 13) {
       this.reset();
       requestAnimationFrame(this.loop);
