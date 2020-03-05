@@ -5,9 +5,14 @@
 Bull-E Season is driving game, it's all about your skills - navigate ("Bully") your way through traffic at full speed. 
 Dodge and swerve through slow driving cars and avoid accidents at all costs. 
 
+## Overview
+* Game gets harder(faster) as longer you are on the road - as it gets harder you will accumilate points faster as well. 
+* As you zoom thorugh the traffic your handling(lane changing speed) increases.
+
 
 ## Live
 Play the game live [here!](https://mahmudahmed.github.io/Bull-E-Season/)
+
 ## Functionality & MVP
 With this driving game, drivers will be able to test their skills on the road. 
 
@@ -48,7 +53,7 @@ Checking to see current score is greater that the local high score, if it is set
 
 
 ## Prototype/Wireframe
-![Wireframe](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/Bull-E%20Season.png)
+![Wireframe](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/dist/wireframe.png)
 
 ## Future considerations
 

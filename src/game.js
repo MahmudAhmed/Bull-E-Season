@@ -17,6 +17,7 @@ class Game {
     this.topScore = localStorage.getItem("highScore") || 0;
     this.highScore.innerText = this.topScore;
     this.scoreCounter = 0;
+    this.pointSpeed = 1;
     this.speed = 4;
     this.lineSpeed = 5;
 
@@ -70,14 +71,15 @@ class Game {
     this.scoreCounter++;
 
     if (this.scoreCounter % 20 == 0) {
-      score.innerText = parseInt(score.innerText) + 1;
+      score.innerText = parseInt(score.innerText) + this.pointSpeed;
     }
     if (this.scoreCounter % 500 == 0) {
       this.speed++;
       this.lineSpeed++;
+      this.pointSpeed++;
     }
-
-    if (this.scoreCounter % 1000 == 0 && this.handling < 15) {
+    
+    if (this.scoreCounter % 1000 == 0 && this.handling < 25) {
       this.handling++;
     }
 
