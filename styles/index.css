@@ -64,10 +64,12 @@ body{
 
 #controls span {
   font-weight: 700;
+  text-shadow: -1px -1px 0 #000, -1px -1px 0 #000, -1px -1px 0 #000, -1px -1px 0 #000; 
 }
 
 #score-container{
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   margin: 10px auto 0;
