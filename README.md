@@ -2,13 +2,15 @@
 ***
 
 ## Description
-Bull-E Season is driving game, it's all about your skills - navigate ("Bully") your way through traffic at full speed. 
+Bull-E Season is driving game, it's all about your skills on the road - navigate ("Bully") your way through traffic at full speed. 
 Dodge and swerve through slow driving cars and avoid accidents at all costs. 
 
 ## Overview
 * Game gets harder(faster) as longer you are on the road - as it gets harder you will accumilate points faster as well. 
 * As you zoom thorugh the traffic your handling(lane changing speed) increases.
-
+* You accumulate more points when you put the pedal to the metal.
+* Unlock cars as you score higher and higher.
+* Certain cars boost your points in different ways. 
 
 ## Live
 Play the game live [here!](https://mahmudahmed.github.io/Bull-E-Season/)
@@ -17,22 +19,25 @@ Play the game live [here!](https://mahmudahmed.github.io/Bull-E-Season/)
 With this driving game, drivers will be able to test their skills on the road. 
 
 * Start and Restart game.
+* Choose a car to drive.
 * Change lanes, move up and backwards.
 * NPC cars on the road.
+* Pause/Resume game.
 * Collisons with cars on the road ends the game.
-* Scoreboard keeping score. 
-* Gets faster after certain points. 
+* Scoreboard keeping score (points increase faster in some events)
+* As you accumulate more and more points, game speeds up.
 
 
 ## Spec Details
 * Player can move car left, right, up and down with arrow keys. 
-* Points will increase as time passes. 
+* Points will increase as time passes.
 * Winning -> Just as in life, you never win when you drive like a maniac...you only get closer to your demise 
 ◕_◕
 
 ## Timeline
 * Day#1 -> Create shell for the game. 
 * Day#2 -> Functionality/logic and design
+* Day#3 -> Additional functionality.
 
 
 ## Languages and Technologies
@@ -57,5 +62,6 @@ Checking to see current score is greater that the local high score, if it is set
 
 ## Future considerations
 
+* Leaderboard
 * More intricate animations and effects.
 * More varieties of themes and levels.
