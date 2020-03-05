@@ -1,6 +1,8 @@
 class Game {
-  constructor() {
-    this.car = document.getElementById("player-car");
+  constructor(playerCar) {
+    this.car = playerCar;
+    this.car.style.top = "80%";
+    this.car.style.left = "20%";
     this.car.style.display = "flex"
     document.querySelectorAll(".line").forEach( el => el.style.display = "block" );
     this.gameContainer = document.getElementById("game-container");
@@ -114,6 +116,14 @@ class Game {
 
     if (this.scoreCounter % 20 == 0) {
       score.innerText = parseInt(score.innerText) + this.pointSpeed;
+      switch (this.car.id[this.car.id.length - 1]){
+        case "4":
+          this.score.innerText = parseInt(this.score.innerText) + 3;
+        case "5":
+          this.score.innerText = parseInt(this.score.innerText) + 3;
+        case "6":
+          this.score.innerText = parseInt(this.score.innerText) + 10;
+      }
     }
     if (this.scoreCounter % 500 == 0 && this.speed <= 15) {
       this.speed++;
@@ -199,8 +209,8 @@ class Game {
     )
       return false;
     this.blinkEffect = setInterval(function() {
-      playerCar.style.display = playerCar.style.display == "none" ? "" : "none";
-      npcCar.style.display = npcCar.style.display == "none" ? "" : "none";
+      playerCar.style.display = playerCar.style.display == "none" ? "flex" : "none";
+      npcCar.style.display = npcCar.style.display == "none" ? "flex" : "none";
     }, 500);
     return true;
   }
