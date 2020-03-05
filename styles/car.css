@@ -9,6 +9,22 @@
 
 }
 
+#start-instruction{
+  position: absolute;
+  top: 140px;
+  font-family: Mansalva;
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(47,168,217);
+  text-shadow: -1px -1px 0 #000, -1px -1px 0 #000;
+}
+
+#unlocks_at{
+  font-size: medium;
+  text-align: center;
+  color: #ff2626;
+}
+
 .pick-car{
   color: white;
   font-size: 42px;

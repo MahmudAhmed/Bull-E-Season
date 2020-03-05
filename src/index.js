@@ -6,6 +6,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const restartBtn = document.getElementById("restart");
   const playBtn = document.getElementById("play");
   const startGame = document.getElementById("start-game")
+  const startInstruction = document.getElementById("start-instruction")
+  const unlocksAt = document.getElementById("unlocks_at")
   const leftBtn = document.getElementById("left-icon")
   const rightBtn = document.getElementById("right-icon")
   const playableCars = document.querySelectorAll(".playable-car")
@@ -13,29 +15,75 @@ window.addEventListener("DOMContentLoaded", () => {
   const topScore = localStorage.getItem("highScore") || 0;
   highScore.innerText = topScore;
   const no = new Audio("./dist/no.mp3");
-
-
+  
+  
   let i = 0;
   playableCars[i].style.display = "flex";
   
   rightBtn.onclick = function(){
-    debugger
+    unlocksAt.innerText = "";
     playableCars[i].style.display = "";
     if (i === playableCars.length - 1) i = -1;
     i++;
-    if ((i === 3 || i === 4) && topScore >= 2000) document.querySelector(`.locked${i + 1}`).style.display = "none";
-    if ((i === 5) && topScore >= 3000) document.querySelector(`.locked${i+1}`).style.display = "none";
+
+    switch(i){
+      case 3:
+        if (topScore >= 2000){
+          document.querySelector(`.locked${i + 1}`).style.display = "none";
+        } else {
+          unlocksAt.innerText = "Unlocks at 2000";
+        }
+        break;
+      case 4:
+        if (topScore >= 2000) {
+          document.querySelector(`.locked${i + 1}`).style.display = "none";
+        } else {
+          unlocksAt.innerText = "Unlocks at 2000";
+        }
+        break;
+      case 5:
+        if (topScore >= 3000) {
+          document.querySelector(`.locked${i + 1}`).style.display = "none";
+        } else {
+          unlocksAt.innerText = "Unlocks at 3000";
+        }
+        break;
+    }
     playableCars[i].style.display = "flex";
   }
 
   leftBtn.onclick = function () {
+    unlocksAt.innerText = "";
     playableCars[i].style.display = "";
     if (i === 0) i = playableCars.length;
     i--;
+
+    switch (i) {
+      case 3:
+        if (topScore >= 2000) {
+          document.querySelector(`.locked${i + 1}`).style.display = "none";
+        } else {
+          unlocksAt.innerText = "Unlocks at 2000";
+        }
+        break;
+      case 4:
+        if (topScore >= 2000) {
+          document.querySelector(`.locked${i + 1}`).style.display = "none";
+        } else {
+          unlocksAt.innerText = "Unlocks at 2000";
+        }
+        break;
+      case 5:
+        if (topScore >= 3000) {
+          document.querySelector(`.locked${i + 1}`).style.display = "none";
+        } else {
+          unlocksAt.innerText = "Unlocks at 3000";
+        }
+        break;
+    }
     playableCars[i].style.display = "flex";
   }
   let game;
-  // debugger
   startGame.onclick = function(){
     if ((i === 3 || i === 4) && topScore < 2000){
       no.play();
@@ -46,6 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
     startGame.style.display = "none";
+    startInstruction.style.display = "none";
     leftBtn.style.display = "none";
     rightBtn.style.display = "none";
     playableCars[i].classList.remove("spin");
