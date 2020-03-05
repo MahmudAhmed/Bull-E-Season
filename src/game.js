@@ -2,7 +2,6 @@ class Game {
   constructor() {
     this.car = document.getElementById("player-car");
     this.car.style.display = "flex"
-    debugger
     document.querySelectorAll(".line").forEach( el => el.style.display = "block" );
     this.gameContainer = document.getElementById("game-container");
     this.gameContainerWidth = parseInt(
@@ -68,7 +67,7 @@ class Game {
     this.speed = 4;
     this.lineSpeed = 5;
     this.gameOver = false;
-    this.handling = 5;
+    this.handling = 4;
     this.car1.style.top = "-80px";
     this.car2.style.top = "-250px";
     this.car3.style.top = "-450px";
@@ -116,13 +115,19 @@ class Game {
     if (this.scoreCounter % 20 == 0) {
       score.innerText = parseInt(score.innerText) + this.pointSpeed;
     }
-    if (this.scoreCounter % 700 == 0) {
+    if (this.scoreCounter % 500 == 0 && this.speed <= 15) {
+      this.speed++;
+      this.lineSpeed++;
+      this.pointSpeed++;
+    }
+
+    if (this.scoreCounter % 3000 == 0 && this.speed > 15) {
       this.speed++;
       this.lineSpeed++;
       this.pointSpeed++;
     }
     
-    if (this.scoreCounter % 1200 == 0 && this.handling < 25) {
+    if (this.scoreCounter % 1200 == 0 && this.handling <= 15) {
       this.handling++;
     }
 
@@ -227,7 +232,6 @@ class Game {
 
   keyDownHandler(event) {
     event.preventDefault();
-    debugger
     if (!this.gameOver && !this.pause) {
       switch (event.keyCode) {
         case 40:
@@ -256,7 +260,6 @@ class Game {
     if (!this.gameOver && event.keyCode === 32) {
       this.togglePause();
     }
-    debugger
     if (this.gameOver && event.keyCode === 13) {
       this.reset();
       requestAnimationFrame(this.loop);

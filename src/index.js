@@ -6,10 +6,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const restartBtn = document.getElementById("restart");
   const playBtn = document.getElementById("play");
   const startGame = document.getElementById("start-game-container")
-
+  let game;
+  // debugger
   startGame.onclick = () => {
     startGame.style.display = "none";
-    let game = new Game();
+    game = new Game();
     requestAnimationFrame(game.loop);
     game.keyUp();
     game.keyDown();

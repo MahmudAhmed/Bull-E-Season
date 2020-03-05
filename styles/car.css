@@ -17,6 +17,14 @@
   background-image: linear-gradient(to bottom, rgba(255, 0, 0, 1),  rgba(4, 0, 255, 1));
 }
 
+#player-car-2{
+  display: flex;
+  bottom: 3%;
+  width: 45px;
+  left: 20%;
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 1),  rgba(4, 0, 255, 1));
+}
+
 #decal1{
   position: relative;
   background-color: white;
