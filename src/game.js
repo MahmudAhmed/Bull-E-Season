@@ -55,6 +55,37 @@ class Game {
 
   }
 
+  reset(){
+    this.restartContainer.style.display = "none";
+    this.car.style.display = "";
+    this.car.style.top = "80%";
+    this.car.style.left = "20%";
+    this.scoreCounter = 0;
+    this.pointSpeed = 1;
+    this.speed = 4;
+    this.lineSpeed = 5;
+    this.gameOver = false;
+    this.handling = 5;
+    this.car1.style.top = "-80px";
+    this.car2.style.top = "-250px";
+    this.car3.style.top = "-450px";
+    this.car4.style.top = "-650px";
+    this.car1.style.display = ""
+    this.car2.style.display = ""
+    this.car3.style.display = ""
+    this.car4.style.display = ""
+    this.score.innerText = "0";
+    clearInterval(this.blinkEffect);
+
+  }
+
+  pause(){
+    cancelAnimationFrame(this.moveRight);
+    cancelAnimationFrame(this.moveLeft);
+    cancelAnimationFrame(this.moveUp);
+    cancelAnimationFrame(this.moveDown);
+  }
+
   loop() {
     if (
       this.collision(this.car, this.car1) ||
@@ -150,7 +181,7 @@ class Game {
       playersTopLeft > npcXReach
     )
       return false;
-    setInterval(function() {
+    this.blinkEffect = setInterval(function() {
       playerCar.style.display = playerCar.style.display == "none" ? "" : "none";
       npcCar.style.display = npcCar.style.display == "none" ? "" : "none";
     }, 500);
@@ -183,6 +214,7 @@ class Game {
 
   keyDownHandler(event) {
     event.preventDefault();
+    debugger
     if (!this.gameOver) {
       switch (event.keyCode) {
         case 40:
@@ -212,8 +244,8 @@ class Game {
       }
     }
     if (this.gameOver && event.keyCode === 13) {
-      debugger
-      location.reload();
+      this.reset();
+      requestAnimationFrame(this.loop);
     }
   }
   keyUpHandler(event) {
@@ -248,7 +280,7 @@ class Game {
 
   left() {
     const position = parseInt(window.getComputedStyle(this.car).left);
-    if (!this.gameOver && position > 5) {
+    if (!this.gameOver && position > 7) {
       this.car.style.left = `${position - this.handling}px`;
       this.moveLeft = requestAnimationFrame(this.left);
     }
