@@ -5,9 +5,16 @@ window.addEventListener("DOMContentLoaded", () => {
   const toggleSound = document.getElementById("music");
   const restartBtn = document.getElementById("restart");
   const playBtn = document.getElementById("play");
+  const startGame = document.getElementById("start-game-container")
 
-  // runGame();
-  let game = new Game();
+  startGame.onclick = () => {
+    startGame.style.display = "none";
+    let game = new Game();
+    requestAnimationFrame(game.loop);
+    game.keyUp();
+    game.keyDown();
+  }
+
   toggleSound.onclick = function() {
     document.querySelector(".fa-volume-mute").classList.toggle("fa-volume-off");
     togglePlay();
@@ -20,11 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
     game.togglePause();
   }
 
-  requestAnimationFrame(game.loop);
-  // function runGame(){
-    game.keyUp();
-    game.keyDown();
-  // }
+  
 
   
 

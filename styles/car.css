@@ -10,6 +10,7 @@
 }
 
 #player-car{
+  display: none;
   bottom: 3%;
   width: 45px;
   left: 20%;

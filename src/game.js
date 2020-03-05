@@ -1,6 +1,9 @@
 class Game {
   constructor() {
     this.car = document.getElementById("player-car");
+    this.car.style.display = "flex"
+    debugger
+    document.querySelectorAll(".line").forEach( el => el.style.display = "block" );
     this.gameContainer = document.getElementById("game-container");
     this.gameContainerWidth = parseInt(
       window.getComputedStyle(this.gameContainer).width
@@ -12,8 +15,6 @@ class Game {
     this.carHeight = parseInt(window.getComputedStyle(this.car).height);
     this.restartContainer = document.getElementById("restart-container");
     this.pauseContainer = document.getElementById("pause-container");
-    // this.restartBtn = document.getElementById("restart");
-    // this.playBtn = document.getElementById("play");
     this.score = document.getElementById("score");
     this.highScore = document.getElementById("high-score");
     this.topScore = localStorage.getItem("highScore") || 0;
@@ -59,7 +60,7 @@ class Game {
 
   reset(){
     this.restartContainer.style.display = "none";
-    this.car.style.display = "";
+    this.car.style.display = "flex";
     this.car.style.top = "80%";
     this.car.style.left = "20%";
     this.scoreCounter = 0;
@@ -115,13 +116,13 @@ class Game {
     if (this.scoreCounter % 20 == 0) {
       score.innerText = parseInt(score.innerText) + this.pointSpeed;
     }
-    if (this.scoreCounter % 500 == 0) {
+    if (this.scoreCounter % 700 == 0) {
       this.speed++;
       this.lineSpeed++;
       this.pointSpeed++;
     }
     
-    if (this.scoreCounter % 1000 == 0 && this.handling < 25) {
+    if (this.scoreCounter % 1200 == 0 && this.handling < 25) {
       this.handling++;
     }
 
@@ -310,6 +311,7 @@ class Game {
   up() {
     const position = parseInt(window.getComputedStyle(this.car).top);
     if (!this.gameOver && position > 20) {
+      this.score.innerText = `${parseInt(this.score.innerText) + 1}`;
       this.car.style.top = `${position - 3}px`;
       this.moveUp = requestAnimationFrame(this.up);
     }
@@ -318,6 +320,7 @@ class Game {
   down() {
     const position = parseInt(window.getComputedStyle(this.car).top);
     if (!this.gameOver && position < this.gameContainerHeight - this.carHeight - 2) {
+      // this.score.innerText = `${parseInt(this.score.innerText) - 1}`;
       this.car.style.top = `${position + 3}px`;
       this.moveDown = requestAnimationFrame(this.down);
     }
