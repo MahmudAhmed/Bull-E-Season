@@ -340,7 +340,6 @@ class Game {
   down() {
     const position = parseInt(window.getComputedStyle(this.car).top);
     if (!this.gameOver && position < this.gameContainerHeight - this.carHeight - 2) {
-      // this.score.innerText = `${parseInt(this.score.innerText) - 1}`;
       this.car.style.top = `${position + 3}px`;
       this.moveDown = requestAnimationFrame(this.down);
     }
