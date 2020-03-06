@@ -42,10 +42,10 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         break;
       case 5:
-        if (topScore >= 3000) {
+        if (topScore >= 5000) {
           document.querySelector(`.locked${i + 1}`).style.display = "none";
         } else {
-          unlocksAt.innerText = "Unlocks at 3000";
+          unlocksAt.innerText = "Unlocks at 5000";
         }
         break;
     }
@@ -74,10 +74,10 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         break;
       case 5:
-        if (topScore >= 3000) {
+        if (topScore >= 5000) {
           document.querySelector(`.locked${i + 1}`).style.display = "none";
         } else {
-          unlocksAt.innerText = "Unlocks at 3000";
+          unlocksAt.innerText = "Unlocks at 5000";
         }
         break;
     }
@@ -89,7 +89,7 @@ window.addEventListener("DOMContentLoaded", () => {
       no.play();
       return;
     }
-    if ((i === 5) && topScore < 3000){
+    if ((i === 5) && topScore < 5000){
       no.play();
       return;
     }
