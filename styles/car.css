@@ -102,6 +102,15 @@
   height: 100px;
   background-image: linear-gradient(to bottom, rgb(255, 203, 61),  rgb(255, 203, 61));
 }
+#playable-car-7{
+  display: none;
+  z-index: 1;
+  top: 230px;
+  left: 47.5%;
+  width: 20px;
+  height: 40px;
+  background-image: linear-gradient(to bottom, rgb(106, 255, 6),  rgba(113, 61, 255, 0.534));
+}
 
 [class^="locked"]{
   position: absolute;

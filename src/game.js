@@ -124,6 +124,8 @@ class Game {
           this.score.innerText = parseInt(this.score.innerText) + 3;
         case "6":
           this.score.innerText = parseInt(this.score.innerText) + 20;
+        case "7":
+          this.score.innerText = parseInt(this.score.innerText) + 20;
       }
     }
     if (this.scoreCounter % 500 == 0 && this.speed <= 15) {

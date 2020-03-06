@@ -48,6 +48,13 @@ window.addEventListener("DOMContentLoaded", () => {
           unlocksAt.innerText = "Unlocks at 5000";
         }
         break;
+      case 6:
+        if (topScore >= 10000) {
+          document.querySelector(`.locked${i + 1}`).style.display = "none";
+        } else {
+          unlocksAt.innerText = "Unlocks at 10000";
+        }
+        break;
     }
     playableCars[i].style.display = "flex";
   }
@@ -80,6 +87,13 @@ window.addEventListener("DOMContentLoaded", () => {
           unlocksAt.innerText = "Unlocks at 5000";
         }
         break;
+      case 6:
+        if (topScore >= 10000) {
+          document.querySelector(`.locked${i + 1}`).style.display = "none";
+        } else {
+          unlocksAt.innerText = "Unlocks at 10000";
+        }
+        break;
     }
     playableCars[i].style.display = "flex";
   }
@@ -90,6 +104,10 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
     if ((i === 5) && topScore < 5000){
+      no.play();
+      return;
+    }
+    if ((i === 6) && topScore < 10000) {
       no.play();
       return;
     }
