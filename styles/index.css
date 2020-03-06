@@ -1,7 +1,7 @@
 body{
   background-size: 15%;
-  background-image: linear-gradient(rgb(47,168,217,0.7), rgb(47,168,217, 0.6)),url("../dist/backdrop.jpg");
-  background-image: linear-gradient(rgb(0,0,0,0.7), rgb(0,0,0, 0.6)),url("../dist/backdrop.jpg");
+  background-image: linear-gradient(rgb(7,168,217,0.7), rgb(47,168,217, 0.6)),url("../dist/backdrop.jpg");
+  background-image: linear-gradient(rgb(0,0,0,0.7), rgb(0,0,0, 0.7)),url("../dist/backdrop.jpg");
 }
 
 .top-icons{
