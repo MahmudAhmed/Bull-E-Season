@@ -116,7 +116,6 @@ class Game {
 
     if (this.scoreCounter % 20 == 0) {
       score.innerText = parseInt(score.innerText) + this.pointSpeed;
-      debugger
       switch (this.car.id[this.car.id.length - 1]){
         case "4":
           this.score.innerText = parseInt(this.score.innerText) + 3;

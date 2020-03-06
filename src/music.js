@@ -3,8 +3,7 @@ const backgroundMusic = document.getElementById("background-music");
 let isPlaying = false;
 
 function togglePlay() {
-  debugger
-  if (isPlaying) {
+    if (isPlaying) {
     backgroundMusic.pause()
   } else {
     backgroundMusic.play();
@@ -12,8 +11,7 @@ function togglePlay() {
 };
 
 backgroundMusic.onplaying = function () {
-  debugger
-  isPlaying = true;
+    isPlaying = true;
 };
 backgroundMusic.onpause = function () {
   isPlaying = false;

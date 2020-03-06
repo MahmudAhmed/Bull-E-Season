@@ -212,7 +212,6 @@ var Game = /*#__PURE__*/function () {
 
       if (this.scoreCounter % 20 == 0) {
         score.innerText = parseInt(score.innerText) + this.pointSpeed;
-        debugger;
 
         switch (this.car.id[this.car.id.length - 1]) {
           case "4":
@@ -647,7 +646,6 @@ var backgroundMusic = document.getElementById("background-music");
 var isPlaying = false;
 
 function togglePlay() {
-  debugger;
 
   if (isPlaying) {
     backgroundMusic.pause();
@@ -659,7 +657,6 @@ function togglePlay() {
 ;
 
 backgroundMusic.onplaying = function () {
-  debugger;
   isPlaying = true;
 };
 
