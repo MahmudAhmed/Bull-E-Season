@@ -119,12 +119,17 @@ class Game {
       switch (this.car.id[this.car.id.length - 1]){
         case "4":
           this.score.innerText = parseInt(this.score.innerText) + 3;
+          break;
         case "5":
           this.score.innerText = parseInt(this.score.innerText) + 3;
+          break;
         case "6":
           this.score.innerText = parseInt(this.score.innerText) + 20;
+          break;
         case "7":
           this.score.innerText = parseInt(this.score.innerText) + 20;
+          break;
+
       }
     }
     if (this.scoreCounter % 500 == 0 && this.speed <= 15) {
