@@ -46,9 +46,22 @@ With this driving game, drivers will be able to test their skills on the road.
 * HTML5/ CSS3
 
 ## Code Snippets
+
+![car_selection](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/dist/carSelection.png)
+
+Swipe through your garage and slect your car, certain cars become unlocked when specifc highscore is set.
+
+![background-animation](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/dist/line-car-animation.png)
+
+Excluding players car, there are a totat of 4 NPC cars on the road. Through every animation loop, the css style postion is set to animate down the cars by the speed level. Once it goes all the way down it's top is set -200px and placed randomly horizontally then brought down again (with a randomly generated RGB color). Giving the illusion of a new car. Same goes for the center lines.
+
 ![collision_function](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/dist/collision.png)
 
 Use conditional logic to return false for conditions where I know the two object cannot be colliding. Then if those conditions aren't true I had the function return true. I use this function in other functions to check for the collision of different game objects so I know what actions should be done.
+
+![scoring_logic](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/dist/scoring-logic.png)
+
+Here lies the scoring logic of the game, the score is originally set to increase by 1 every 20 loops. When you move up during the game...the score increases by 1 every single loop. When you use unlocked cars you your scorce also gets a boost, depending on the car selected. 
 
 ![storeing_data_locally](https://github.com/MahmudAhmed/Bull-E-Season/blob/master/dist/settingLocalHighScore.png)
 Checking to see current score is greater that the local high score, if it is set the local storage fore "highScore" to be later retrived. 
