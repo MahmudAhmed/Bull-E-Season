@@ -2,7 +2,7 @@
 ***
 
 ## Description
-Bull-E Season is driving game, it's all about your skills on the road - navigate ("Bully") your way through traffic at full speed. 
+Bull-E Season is a driving game, it's all about your skills on the road - navigate ("Bully") your way through traffic at full speed. 
 Dodge and swerve through slow driving cars and avoid accidents at all costs. 
 
 ## Overview
