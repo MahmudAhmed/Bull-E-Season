@@ -124,10 +124,10 @@ class Game {
           this.score.innerText = parseInt(this.score.innerText) + 3;
           break;
         case "6":
-          this.score.innerText = parseInt(this.score.innerText) + 20;
+          this.score.innerText = parseInt(this.score.innerText) + 10;
           break;
         case "7":
-          this.score.innerText = parseInt(this.score.innerText) + 20;
+          this.score.innerText = parseInt(this.score.innerText) + 10;
           break;
 
       }
