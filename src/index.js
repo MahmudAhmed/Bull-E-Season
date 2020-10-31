@@ -28,31 +28,31 @@ window.addEventListener("DOMContentLoaded", () => {
 
     switch(i){
       case 3:
-        if (topScore >= 2000){
+        if (topScore >= 1000){
           document.querySelector(`.locked${i + 1}`).style.display = "none";
         } else {
-          unlocksAt.innerText = "Unlocks at 2000";
+          unlocksAt.innerText = "Unlocks at 1000";
         }
         break;
       case 4:
-        if (topScore >= 2000) {
+        if (topScore >= 1000) {
           document.querySelector(`.locked${i + 1}`).style.display = "none";
         } else {
-          unlocksAt.innerText = "Unlocks at 2000";
+          unlocksAt.innerText = "Unlocks at 1000";
         }
         break;
       case 5:
+        if (topScore >= 2500) {
+          document.querySelector(`.locked${i + 1}`).style.display = "none";
+        } else {
+          unlocksAt.innerText = "Unlocks at 2500";
+        }
+        break;
+      case 6:
         if (topScore >= 5000) {
           document.querySelector(`.locked${i + 1}`).style.display = "none";
         } else {
           unlocksAt.innerText = "Unlocks at 5000";
-        }
-        break;
-      case 6:
-        if (topScore >= 10000) {
-          document.querySelector(`.locked${i + 1}`).style.display = "none";
-        } else {
-          unlocksAt.innerText = "Unlocks at 10000";
         }
         break;
     }
