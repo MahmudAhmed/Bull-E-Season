@@ -33,7 +33,7 @@
   ],
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --progress --colors",
     "webpack:watch": "webpack --watch --config webpack.dev.js",
     "webpack:build": "webpack --config webpack.prod.js  --optimize-minimize"
   }
